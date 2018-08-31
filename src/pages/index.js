@@ -3,7 +3,7 @@ import CardList from '../components/CardList'
 import Card from '../components/Card'
 import Container from '../components/Container'
 import PageTitle from '../components/PageTitle'
-import logo from "../images/smlogo.png"
+import logo from "../images/mercyblueicon.jpg"
 import SEO from '../components/SEO'
 
 
@@ -14,14 +14,14 @@ const Index = ({ data }) => {
     <div>
       <SEO />
       <Container>
-        <PageTitle small>          
+        <PageTitle small>
           <img src={logo} alt="no deal" />
           <a
-            href="https://twitter.com/chaoticbots"
+            href="http://mercycharlotte.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Strategic Machines, Inc.
+            Mercy Charlotte
           </a>
         </PageTitle>
         <CardList>

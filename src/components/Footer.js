@@ -8,6 +8,7 @@ import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin'
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import faEnvelope from '@fortawesome/fontawesome-free-regular/faEnvelope'
 import Container from '../components/Container'
+import smlogo from "../images/smlogo.png"
 
 const Wrapper = styled.footer`
   margin-bottom: 0px;
@@ -53,6 +54,9 @@ const Social = styled.div`
     display: inline-block;
     margin: 0;
     padding: 0;
+    img {
+      width: 22px;
+    }
     @media screen and (max-width: 767px) {
       margin-left: 14px;
     }
@@ -105,7 +109,12 @@ const Copyright = styled.div`
 const Footer = () => (
   <Container>
     <Wrapper>
-      <Social>      
+      <Social>
+        <li>
+          <a href="https://twitter.com/chaoticbots" target="_blank">
+            <img src={smlogo} alt="no deal" />
+          </a>
+        </li>
         <li>
           <a href="https://twitter.com/urban_coder" target="_blank">
             <FontAwesomeIcon icon={faTwitter} />
