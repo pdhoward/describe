@@ -13,7 +13,7 @@ KEYNOTES FOR CUSTOMING DESCRIBE FOR UPDATED CMS MODELS
 > notify
 > register
 > excuseme (preseeded - error handling)
-> forsale
+> forsale  ...(text in item, price and photo ... auto enabled .. posted to cms)
 > buy
 > poll
 > unsubscribe
