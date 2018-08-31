@@ -1,7 +1,7 @@
 
 
 
-KEYNOTES FOR CUSTOMING DESCRIBE FOR UPDATED CMS MODELS
+KEYNOTES FOR CUSTOMIZING 'DESCRIBE' FOR UPDATED CMS MODELS
 
 0. demo site with content, blogs, live chat for all this capability --- a scenario
 
