@@ -32,6 +32,8 @@ KEYNOTES FOR CUSTOMIZING 'DESCRIBE' FOR UPDATED CMS MODELS
 
 > members
 > proxies available
+> channels avilable for notifications
+> workflow steps -- sell
 
 2. run setup process ... several stages ...
 > user needs to register with name, credit card
