@@ -3,18 +3,21 @@
 
 KEYNOTES FOR CUSTOMING DESCRIBE FOR UPDATED CMS MODELS
 
+0. demo site with content, blogs, live chat for all this capability --- a scenario
+
 1. identify the content types
 
 > config - apis, tokens and other information required for suite of user owned services
 
 --
->> proxy controllers
+>> proxy directives
 > ask
 > notify
 > register
 > excuseme (preseeded - error handling)
 > forsale  ...(text in item, price and photo ... auto enabled .. posted to cms)
 > buy
+> order (require a vendor api with token ... may be customized for a vendor ... like plugin)
 > poll
 > unsubscribe
 > discover (discovery queries for specific content ... ie airbnb reviews)
@@ -29,4 +32,12 @@ KEYNOTES FOR CUSTOMING DESCRIBE FOR UPDATED CMS MODELS
 
 > members
 > proxies available
+
+2. run setup process ... several stages ...
+> user needs to register with name, credit card
+> get started ... use Machine command line ... generate taxonomy and seeds data
+> user can follows docs and go to cms to complete configs and directives  ... 
+> run nlp analyizer and generator ... connects proxies to humans
+> nlp analyzer and config analyzier will text or email errors to the user
+> a static site with web test widget is generated for the user .... able to test via web widget
 
