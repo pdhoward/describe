@@ -1,0 +1,32 @@
+
+
+
+KEYNOTES FOR CUSTOMING DESCRIBE FOR UPDATED CMS MODELS
+
+1. identify the content types
+
+> config - apis, tokens and other information required for suite of user owned services
+
+--
+>> proxy controllers
+> ask
+> notify
+> register
+> excuseme (preseeded - error handling)
+> forsale
+> buy
+> poll
+> unsubscribe
+> discover (discovery queries for specific content ... ie airbnb reviews)
+> watch
+> stream
+> remindme
+-
+-
+-
+
+--
+
+> members
+> proxies available
+
