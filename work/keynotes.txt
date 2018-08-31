@@ -36,8 +36,18 @@ KEYNOTES FOR CUSTOMING DESCRIBE FOR UPDATED CMS MODELS
 2. run setup process ... several stages ...
 > user needs to register with name, credit card
 > get started ... use Machine command line ... generate taxonomy and seeds data
-> user can follows docs and go to cms to complete configs and directives  ... 
+> user can follow docs and go to cms to complete configs and directives  ... or select a prepackages set of content and modify
 > run nlp analyizer and generator ... connects proxies to humans
-> nlp analyzer and config analyzier will text or email errors to the user
-> a static site with web test widget is generated for the user .... able to test via web widget
+> nlp analyzer and config analyzier will text or email errors to the user that need to be fixed
+> a static site with web test widget is generated for the user .... able to test via web widget and view all content
+
+
+3. GO
+
+---------- use cases
+> digital notifier on your commerce site
+> membership engagement
+> customer engagement
+> analytics .... neo4j
+> 
 
