@@ -78,5 +78,30 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
   })
 
-  return Promise.all([loadPosts, loadPages, loadTags])
+  const loadAsks = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulAsk {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+        result.data.allContentfulAsk.edges.map(({ node }) => {
+          createPage({
+            path: `${node.slug}/`,
+            component: path.resolve(`./src/templates/post.js`),
+            context: {
+              slug: node.slug,
+            },
+          })
+        })
+        resolve()
+      })
+  })
+
+  return Promise.all([loadPosts, loadPages, loadTags, loadAsks])
 }

@@ -8,7 +8,7 @@ import SEO from '../components/SEO'
 
 
 const Dialogue = ({ data }) => {
-  //const posts = data.allContentfulPost.edges
+  // const posts = data.allContentfulPost.edges
 
   return (
     <div>

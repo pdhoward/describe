@@ -5,14 +5,12 @@ import Container from '../components/Container'
 import PageTitle from '../components/PageTitle'
 import logo from "../images/mercyblueicon.jpg"
 import SEO from '../components/SEO'
-
-
+/*
 const Index = ({ data }) => {
-  console.log()
-  const posts = data.allContentfulAsk.edges
+  const posts = data.allContentfulPost.edges
 
   return (
-    <div>  
+    <div>
       <SEO />
       <Container>
         <PageTitle small>
@@ -31,9 +29,9 @@ const Index = ({ data }) => {
               key={post.id}
               slug={post.slug}
               image={post.heroImage}
-              title={post.action}
-              date={post.creationDate}
-              excerpt={post.triggers}
+              title={post.title}
+              date={post.publishDate}
+              excerpt={post.body}
             />
           ))}
         </CardList>
@@ -44,26 +42,26 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   query indexQuery {
-    allContentfulAsk(
+    allContentfulPost(
       limit: 1000
-      sort: { fields: [creationDate], order: DESC }
+      sort: { fields: [publishDate], order: DESC }
     ) {
       edges {
         node {
-          action
+          title
           id
           slug
-          creationDate(formatString: "MMMM DD, YYYY")
+          publishDate(formatString: "MMMM DD, YYYY")
           heroImage {
             title
             sizes(maxWidth: 1800) {
               ...GatsbyContentfulSizes_withWebp_noBase64
             }
           }
-          triggers {
+          body {
             childMarkdownRemark {
               html
-              excerpt(pruneLength: 16)
+              excerpt(pruneLength: 80)
             }
           }
         }
@@ -73,3 +71,4 @@ export const query = graphql`
 `
 
 export default Index
+*/
