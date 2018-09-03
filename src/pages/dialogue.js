@@ -7,8 +7,8 @@ import logo from "../images/mercyblueicon.jpg"
 import SEO from '../components/SEO'
 
 
-const Index = ({ data }) => {
-  const posts = data.allContentfulPost.edges
+const Dialogue = ({ data }) => {
+  //const posts = data.allContentfulPost.edges
 
   return (
     <div>
@@ -71,4 +71,4 @@ export const query = graphql`
   }
 `
 
-export default Index
+export default Dialogue
