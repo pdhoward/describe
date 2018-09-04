@@ -28,10 +28,9 @@ const Tag = styled.li`
 const TagList = props => {   
     let tag = props.tags
   return (
-    <List>
-     
+    <List>     
         <Tag key={tag.id}>
-          <Link to={`/tag/${tag.slug}/`}>{tag.title}</Link>
+          <Link to={`/app/${tag.slug}/`}>{tag.name}</Link>
         </Tag>
      
     </List>

@@ -8,23 +8,23 @@ import PageTitle from '../components/PageTitle'
 import Container from '../components/Container'
 
 const TagTemplate = ({ data }) => {
-  const { name, slug } = data.contentfulProxies
+  const { title, slug } = data.contentfulTag
 
-  const posts = sortBy(data.contentfulProxies.ask, 'creationDate').reverse()
+  const posts = sortBy(data.contentfulTag.post, 'publishDate').reverse()
 
   return (
     <div>
       <Helmet>
-        <title>{`Tag: ${name} - ${config.siteTitle}`}</title>
+        <title>{`Tag: ${title} - ${config.siteTitle}`}</title>
         <meta
           property="og:title"
-          content={`Tag: ${name} - ${config.siteTitle}`}
+          content={`Tag: ${title} - ${config.siteTitle}`}
         />
-        <meta property="og:url" content={`${config.siteUrl}/app/${slug}/`} />
+        <meta property="og:url" content={`${config.siteUrl}/tag/${slug}/`} />
       </Helmet>
 
       <Container>
-        <PageTitle small>Proxy App: &ldquo;{name}&rdquo;</PageTitle>
+        <PageTitle small>Tag: &ldquo;{title}&rdquo;</PageTitle>
 
         <CardList>
           {posts.map(post => (
@@ -32,9 +32,9 @@ const TagTemplate = ({ data }) => {
               key={post.id}
               slug={post.slug}
               image={post.heroImage}
-              title={post.action}
-              date={post.creationDate}
-              excerpt={post.triggers}
+              title={post.title}
+              date={post.publishDate}
+              excerpt={post.body}
             />
           ))}
         </CardList>
@@ -42,33 +42,33 @@ const TagTemplate = ({ data }) => {
     </div>
   )
 }
-
+/*
 export const query = graphql`
   query tagQuery($slug: String!) {
-    contentfulProxies(slug: { eq: $slug }) {
-      name
+    contentfulTag(slug: { eq: $slug }) {
+      title
       id
       slug
-      ask {
+      post {
         id
-        action
+        title
         slug
-        creationDate(formatString: "MMMM DD, YYYY")
+        publishDate(formatString: "MMMM DD, YYYY")
         heroImage {
           title
           sizes(maxWidth: 1800) {
             ...GatsbyContentfulSizes_withWebp_noBase64
           }
         }
-        triggers {
+        body {
           childMarkdownRemark {
             html
-            excerpt(pruneLength: 30)
+            excerpt(pruneLength: 80)
           }
         }
       }
     }
   }
 `
-
+*/
 export default TagTemplate
