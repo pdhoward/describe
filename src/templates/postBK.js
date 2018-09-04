@@ -12,44 +12,44 @@ import SEO from '../components/SEO'
 
 const PostTemplate = ({ data }) => {
   const {
-    action,
+    title,
     slug,
     id,
     heroImage,
-    triggers,
-    creationDate,
-    proxies,
-  } = data.contentfulAsk
-  const postNode = data.contentfulAsk
+    body,
+    publishDate,
+    tags,
+  } = data.contentfulPost
+  const postNode = data.contentfulPost
 
   const postIndex = find(
-    data.allContentfulAsk.edges,
-    ({ node: ask }) => ask.id === id
+    data.allContentfulPost.edges,
+    ({ node: post }) => post.id === id
   )
 
   return (
     <div>
       <Helmet>
-        <title>{`${action} - ${config.siteTitle}`}</title>
+        <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} postSEO />
 
-      <Hero title={action} image={heroImage} height={'50vh'} />
+      <Hero title={title} image={heroImage} height={'50vh'} />
 
       <Container>
-        {proxies && <TagList tags={proxies} />}
-        <PostDate date={creationDate} />
-        <PageBody body={triggers} />
+        {tags && <TagList tags={tags} />}
+        <PostDate date={publishDate} />
+        <PageBody body={body} />
         <PostLinks previous={postIndex.previous} next={postIndex.next} />
       </Container>
     </div>
   )
 }
-
+/*
 export const query = graphql`
   query postQuery($slug: String!) {
-    contentfulAsk(slug: { eq: $slug }) {
-      action
+    contentfulPost(slug: { eq: $slug }) {
+      title
       id
       slug
       metaDescription {
@@ -57,10 +57,10 @@ export const query = graphql`
           content
         }
       }
-      creationDate(formatString: "MMMM DD, YYYY")
-      publishDateISO: creationDate(formatString: "YYYY-MM-DD")
-      proxies {
-        name
+      publishDate(formatString: "MMMM DD, YYYY")
+      publishDateISO: publishDate(formatString: "YYYY-MM-DD")
+      tags {
+        title
         id
         slug
       }
@@ -75,16 +75,16 @@ export const query = graphql`
           height
         }
       }
-      triggers {
+      body {
         childMarkdownRemark {
           html
           excerpt(pruneLength: 320)
         }
       }
     }
-    allContentfulAsk(
+    allContentfulPost(
       limit: 1000
-      sort: { fields: [creationDate], order: DESC }
+      sort: { fields: [publishDate], order: DESC }
     ) {
       edges {
         node {
@@ -100,5 +100,5 @@ export const query = graphql`
     }
   }
 `
-
+*/
 export default PostTemplate

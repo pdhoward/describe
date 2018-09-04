@@ -17,7 +17,7 @@ const PostDate = props => {
   return (
     <Wrapper>
       <Date>
-        <span>Published:</span> {props.date}
+        <span>Created:</span> {props.date}
       </Date>
     </Wrapper>
   )

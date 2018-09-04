@@ -25,15 +25,14 @@ const Tag = styled.li`
   }
 `
 
-const TagList = props => {   
-    let tag = props.tags
+const TagList = props => {
   return (
     <List>
-     
+      {props.proxies.map(tag => (
         <Tag key={tag.id}>
           <Link to={`/tag/${tag.slug}/`}>{tag.title}</Link>
         </Tag>
-     
+      ))}
     </List>
   )
 }
