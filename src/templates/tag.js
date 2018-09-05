@@ -24,7 +24,7 @@ const TagTemplate = ({ data }) => {
       </Helmet>
 
       <Container>
-        <PageTitle small>Proxy App: &ldquo;{name}&rdquo;</PageTitle>
+        <PageTitle small>These dialogue bundles are modeled after the {posts[0].pattern} pattern, and are handled by the &ldquo;{name}&rdquo; application</PageTitle>
 
         <CardList>
           {posts.map(post => (
@@ -53,6 +53,7 @@ export const query = graphql`
         id
         action
         slug
+        pattern
         creationDate(formatString: "MMMM DD, YYYY")
         heroImage {
           title
@@ -64,7 +65,7 @@ export const query = graphql`
           childMarkdownRemark {
             html
             excerpt(pruneLength: 30)
-          }
+          }       
         }
       }
     }
