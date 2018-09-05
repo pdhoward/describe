@@ -25,6 +25,8 @@ const PostTemplate = ({ data }) => {
     pattern
   } = data.contentfulAsk
   const postNode = data.contentfulAsk
+  console.log("post node")
+  console.log(postNode)
 
   const postIndex = find(
     data.allContentfulAsk.edges,

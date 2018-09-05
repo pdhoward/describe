@@ -116,6 +116,11 @@ const PageBody = props => {
       />
       <Response>
         <span>Response:</span> {props.response}
+        <br></br>
+        <span>Link:</span> {props.link}
+        <br></br>
+        <span>Note:</span> {props.executeLink ? "The link is executed first and results are passed to user" : "The link is passed with response"}
+        
       </Response>
     </Wrapper>
   )
