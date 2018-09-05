@@ -25,15 +25,28 @@ const Tag = styled.li`
   }
 `
 
+const Pattern = styled.p`
+  display: inline-block;
+  span {
+    font-weight: 600;
+  }
+`
+
 const TagList = props => {   
     let tag = props.tags
   return (
-    <List>     
-        <Tag key={tag.id}>
-          <Link to={`/app/${tag.slug}/`}>{tag.name}</Link>
-        </Tag>
-     
-    </List>
+    <div>
+        <List>     
+            <Tag key={tag.id}>
+              <Link to={`/app/${tag.slug}/`}>{tag.name}</Link>
+            </Tag>
+            <Pattern>
+              <span>Pattern:</span> {props.pattern}
+            </Pattern>
+        
+        </List>
+        
+    </div>
   )
 }
 

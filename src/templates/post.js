@@ -43,9 +43,9 @@ const PostTemplate = ({ data }) => {
       <Hero title={action} image={heroImage} height={'50vh'} />
 
       <Container>
-        {proxies && <TagList tags={proxies} />}
+        {proxies && <TagList tags={proxies} pattern={pattern} />}
         <PostDate date={creationDate} />
-        <PageBody body={triggers} response={response} link={link} executeLink={executeLink} pattern={pattern}/>
+        <PageBody body={triggers} response={response} link={link} executeLink={executeLink}/>
         <PostLinks previous={postIndex.previous} next={postIndex.next} />
       </Container>
     </div>
