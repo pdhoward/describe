@@ -53,6 +53,31 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
   })
 
+  const loadNotify = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulNotify {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+        result.data.allContentfulNotify.edges.map(({ node }) => {
+          createPage({
+            path: `${node.slug}/`,
+            component: path.resolve(`./src/templates/notify.js`),
+            context: {
+              slug: node.slug,
+            },
+          })
+        })
+        resolve()
+      })
+  })
+
   const loadAsks = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -78,5 +103,5 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
   })
   
-  return Promise.all([loadPages, loadAsks, loadApps])
+  return Promise.all([loadPages, loadAsks, loadApps, loadNotify])
 }
