@@ -19,6 +19,10 @@ const PostTemplate = ({ data }) => {
     triggers,
     creationDate,
     proxies,
+    response,
+    link,
+    executeLink,
+    pattern
   } = data.contentfulAsk
   const postNode = data.contentfulAsk
 
@@ -39,7 +43,7 @@ const PostTemplate = ({ data }) => {
       <Container>
         {proxies && <TagList tags={proxies} />}
         <PostDate date={creationDate} />
-        <PageBody body={triggers} />
+        <PageBody body={triggers} response={response} link={link} executeLink={executeLink} pattern={pattern}/>
         <PostLinks previous={postIndex.previous} next={postIndex.next} />
       </Container>
     </div>
@@ -52,6 +56,10 @@ export const query = graphql`
       action
       id
       slug
+      response
+      link
+      executeLink
+      pattern
       metaDescription {
         internal {
           content

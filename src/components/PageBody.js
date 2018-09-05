@@ -96,12 +96,28 @@ const Body = styled.div`
     }
   }
 `
+const Wrapper = styled.div`
+  margin: 0 auto 2em;
+  max-width: ${props => props.theme.sizes.maxWidthCentered};
+`
+
+const Response = styled.p`
+  display: inline-block;
+  span {
+    font-weight: 600;
+  }
+`
 
 const PageBody = props => {
   return (
-    <Body
-      dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
-    />
+    <Wrapper>
+      <Body
+        dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
+      />
+      <Response>
+        <span>Response:</span> {props.response}
+      </Response>
+    </Wrapper>
   )
 }
 
