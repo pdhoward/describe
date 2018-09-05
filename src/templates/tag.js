@@ -11,6 +11,7 @@ const TagTemplate = ({ data }) => {
   const { name, slug } = data.contentfulProxies
 
   const posts = sortBy(data.contentfulProxies.ask, 'creationDate').reverse()
+  console.log(posts)
 
   return (
     <div>
@@ -24,7 +25,7 @@ const TagTemplate = ({ data }) => {
       </Helmet>
 
       <Container>
-        <PageTitle small>These dialogue bundles are modeled after the {posts[0].pattern} pattern, and are handled by the &ldquo;{name}&rdquo; application</PageTitle>
+        <PageTitle small>These dialogue bundles are handled by the &ldquo;{name}&rdquo; application</PageTitle>
 
         <CardList>
           {posts.map(post => (

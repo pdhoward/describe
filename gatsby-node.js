@@ -2,7 +2,7 @@ const path = require(`path`)
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
-
+/*
   const loadPosts = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -27,7 +27,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       resolve()
     })
   })
-
+*/
   const loadPages = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -52,7 +52,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       resolve()
     })
   })
-
+/*
   const loadTags = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -77,7 +77,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       resolve()
     })
   })
-
+*/
 
   const loadApps = new Promise((resolve, reject) => {
     graphql(`
@@ -129,5 +129,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
   })
 
-  return Promise.all([loadPosts, loadPages, loadTags, loadAsks, loadApps])
+  //return Promise.all([loadPosts, loadPages, loadTags, loadAsks, loadApps])
+  return Promise.all([loadPages, loadAsks, loadApps])
 }
