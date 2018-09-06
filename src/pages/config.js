@@ -24,7 +24,7 @@ const Wrapper = styled.h1`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 15%;
 }
 `
 
@@ -32,7 +32,7 @@ export default () => (
   <div>
     <Wrapper>
       <br></br>
-      <p>Placeholder for User Defined PLatform Configs</p>
+      <p>Placeholder for User Defined Platform Configs</p>
       <br></br>
       <img src={logo} alt="Center Images" className="center" />
     </Wrapper>
