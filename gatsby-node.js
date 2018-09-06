@@ -52,7 +52,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         resolve()
       })
   })
-
+/*
   const loadNotify = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -64,7 +64,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       }
-    `).then(result => {
+    `).then(result => {      
         result.data.allContentfulNotify.edges.map(({ node }) => {
           createPage({
             path: `${node.slug}/`,
@@ -77,7 +77,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         resolve()
       })
   })
-
+*/
   const loadNotifyPosts = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -128,5 +128,5 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
   })
   
-  return Promise.all([loadPages, loadAsks, loadApps, loadNotify, loadNotifyPosts])
+  return Promise.all([loadPages, loadAsks, loadApps, loadNotifyPosts])
 }

@@ -7,9 +7,9 @@ import logo from "../images/mercyblueicon.jpg"
 import SEO from '../components/SEO'
 
 
-const NotifyTemplate = ({ data }) => {
+const Index = ({ data }) => {
   console.log()
-  const posts = data.allContentfulNotify.edges
+  const posts = data.allContentfulAsk.edges
 
   return (
     <div>  
@@ -43,8 +43,8 @@ const NotifyTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query notifyQuery {
-    allContentfulNotify(
+  query indexQuery {
+    allContentfulAsk(
       limit: 1000
       sort: { fields: [creationDate], order: DESC }
     ) {
@@ -72,4 +72,4 @@ export const query = graphql`
   }
 `
 
-export default NotifyTemplate
+export default Index

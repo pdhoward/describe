@@ -1,75 +1,41 @@
 import React from 'react'
-import CardList from '../components/CardList'
-import Card from '../components/Card'
-import Container from '../components/Container'
-import PageTitle from '../components/PageTitle'
+import styled from 'styled-components'
 import logo from "../images/mercyblueicon.jpg"
 import SEO from '../components/SEO'
 
 
-const Index = ({ data }) => {
-  console.log()
-  const posts = data.allContentfulAsk.edges
-
-  return (
-    <div>  
-      <SEO />
-      <Container>
-        <PageTitle small>
-          <img src={logo} alt="no deal" />
-          <a
-            href="http://mercycharlotte.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Mercy Charlotte
-          </a>
-        </PageTitle>
-        <CardList>
-          {posts.map(({ node: post }) => (
-            <Card
-              key={post.id}
-              slug={post.slug}
-              image={post.heroImage}
-              title={post.action}
-              date={post.creationDate}
-              excerpt={post.triggers}
-            />
-          ))}
-        </CardList>
-      </Container>
-    </div>
-  )
-}
-
-export const query = graphql`
-  query indexQuery {
-    allContentfulAsk(
-      limit: 1000
-      sort: { fields: [creationDate], order: DESC }
-    ) {
-      edges {
-        node {
-          action
-          id
-          slug
-          creationDate(formatString: "MMMM DD, YYYY")
-          heroImage {
-            title
-            sizes(maxWidth: 1800) {
-              ...GatsbyContentfulSizes_withWebp_noBase64
-            }
-          }
-          triggers {
-            childMarkdownRemark {
-              html
-              excerpt(pruneLength: 16)
-            }
-          }
-        }
-      }
-    }
+const Wrapper = styled.h1`
+  font-size: ${props => (props.small ? '1.25em' : '2em')};  
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 3rem 0;
+  margin: ${props => (props.small ? '1rem 0 4rem 0' : '0 0 3rem 0')};
+  line-height: 1.2;
+  span {
+    margin: 0 0 0 0.25em;
   }
+  a {
+    transition: all 0.2s;
+    color: ${props => props.theme.colors.base};
+    &:hover {
+      color: ${props => props.theme.colors.highlight};
+    }
+  }  
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 `
 
-export default Index
+export default () => (
+  <div>
+    <Wrapper>
+      <br></br>
+      <p>Mercy Mobile Configurations</p>
+      <br></br>    
+      <img src={logo} alt="Center Images" className="center" />
+    </Wrapper>
+  </div>
+);
