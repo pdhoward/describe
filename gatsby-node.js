@@ -149,7 +149,67 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
   })
 
+
+  ////////////////////////////////////////////
+  /////    content collection         ///////
+  ////    with pages/sell.js          ///////
+  /////////////////////////////////////////
+
+  // build page for each individual action unit published for the Sell Pattern
+
+  const loadSellPosts = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulSell {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+        result.data.allContentfulSell.edges.map(({ node }) => {
+          createPage({
+            path: `${node.slug}/`,
+            component: path.resolve(`./src/templates/sellpost.js`),
+            context: {
+              slug: node.slug,
+            },
+          })
+        })
+        resolve()
+      })
+  })
+
+  // build a gallery of all Sell Pattern action units which are consumed by the same proxy app 
+
+  const loadSellApps = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulProxies {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+        result.data.allContentfulProxies.edges.map(({ node }) => {
+          createPage({
+            path: `app/${node.slug}/`,
+            component: path.resolve(`./src/templates/sellapp.js`),
+            context: {
+              slug: node.slug,
+            },
+          })
+        })
+        resolve()
+      })
+  })
+
   
   
-  return Promise.all([loadPages, loadAsks, loadApps, loadNotifyPosts, loadNotifyApps])
+  return Promise.all([loadPages, loadAsks, loadApps, loadNotifyPosts, loadNotifyApps, loadSellPosts, loadSellApps])
 }
