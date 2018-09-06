@@ -161,4 +161,3 @@ GOOGLE_ANALYTICS
 - The template assumes you have at least **one page**, **one post** and **one tag** in Contentful. If you do not the website will fail to build.
 - The SEO component assumes you have entered at least one meta description in Contentful for a post and one for a page. If you do not the website will fail to build. See the Content and SEO section above.
 - **DO NOT** store your Contentful access tokens or space ids anywhere in GitHub. Treat them like passwords.
-- **Yarn Users:** remove the `yarn*` line from the `.gitignore` file to avoid discrepancies in the Netlify deploy.
