@@ -11,6 +11,7 @@ const TagTemplate = ({ data }) => {
   const { name, slug } = data.contentfulProxies
 
   const posts = sortBy(data.contentfulProxies.ask, 'creationDate').reverse()
+  console.log('tags also known as ask')
   console.log(posts)
 
   return (

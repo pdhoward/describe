@@ -7,10 +7,11 @@ import CardList from '../components/CardList'
 import PageTitle from '../components/PageTitle'
 import Container from '../components/Container'
 
-const TagTemplate = ({ data }) => {
+const sellTagTemplate = ({ data }) => {
   const { name, slug } = data.contentfulProxies
 
   const posts = sortBy(data.contentfulProxies.sell, 'creationDate').reverse()
+  console.log('sell app')
   console.log(posts)
 
   return (
@@ -25,7 +26,7 @@ const TagTemplate = ({ data }) => {
       </Helmet>
 
       <Container>
-        <PageTitle small>These dialogue bundles are handled by the &ldquo;{name}&rdquo; application</PageTitle>
+        <PageTitle small>These actions are handled by the &ldquo;{name}&rdquo; application</PageTitle>
 
         <CardList>
           {posts.map(post => (
@@ -73,4 +74,4 @@ export const query = graphql`
   }
 `
 
-export default TagTemplate
+export default sellTagTemplate

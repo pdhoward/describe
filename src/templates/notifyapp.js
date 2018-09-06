@@ -7,10 +7,11 @@ import CardList from '../components/CardList'
 import PageTitle from '../components/PageTitle'
 import Container from '../components/Container'
 
-const TagTemplate = ({ data }) => {
+const notifyTagTemplate = ({ data }) => {
   const { name, slug } = data.contentfulProxies
 
   const posts = sortBy(data.contentfulProxies.notify, 'creationDate').reverse()
+  console.log('notify app')
   console.log(posts)
 
   return (
@@ -73,4 +74,4 @@ export const query = graphql`
   }
 `
 
-export default TagTemplate
+export default notifyTagTemplate
