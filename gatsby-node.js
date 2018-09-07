@@ -79,7 +79,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         result.data.allContentfulProxies.edges.map(({ node }) => {
           createPage({
             path: `app/${node.slug}/`,
-            component: path.resolve(`./src/templates/tag.js`),
+            component: path.resolve(`./src/templates/proxies.js`),
             context: {
               slug: node.slug,
             },
@@ -123,7 +123,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   })
 
   // build a gallery of all Notify Pattern action units which are consumed by the same proxy app 
-/*
+
   const loadNotifyApps = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -139,32 +139,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         result.data.allContentfulProxies.edges.map(({ node }) => {
           createPage({
             path: `app/${node.slug}/`,
-            component: path.resolve(`./src/templates/notifyapp.js`),
-            context: {
-              slug: node.slug,
-            },
-          })
-        })
-        resolve()
-      })
-  })
-*/
-  const loadNotifyApps = new Promise((resolve, reject) => {
-    graphql(`
-      {
-        allContentfulProxies {
-          edges {
-            node {
-              slug
-            }
-          }
-        }
-      }
-    `).then(result => {
-        result.data.allContentfulProxies.edges.map(({ node }) => {
-          createPage({
-            path: `app/${node.slug}/`,
-            component: path.resolve(`./src/templates/sellapp.js`),
+            component: path.resolve(`./src/templates/proxies.js`),
             context: {
               slug: node.slug,
             },
@@ -223,7 +198,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         result.data.allContentfulProxies.edges.map(({ node }) => {
           createPage({
             path: `app/${node.slug}/`,
-            component: path.resolve(`./src/templates/sellapp.js`),
+            component: path.resolve(`./src/templates/proxies.js`),
             context: {
               slug: node.slug,
             },

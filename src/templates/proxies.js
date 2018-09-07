@@ -10,12 +10,10 @@ import Container from '../components/Container'
 const sellTagTemplate = ({ data }) => {
   const { name, slug } = data.contentfulProxies
 
-  const posts = sortBy(data.contentfulProxies.sell, 'creationDate').reverse()
-  const posts2 = sortBy(data.contentfulProxies.notify, 'creationDate').reverse()
-  console.log('sell app')
-  console.log(posts)
-  console.log('notify app')
-  console.log(posts2)
+  const sell = sortBy(data.contentfulProxies.sell, 'creationDate').reverse()
+  const notify = sortBy(data.contentfulProxies.notify, 'creationDate').reverse()
+  const ask = sortBy(data.contentfulProxies.ask, 'creationDate').reverse()
+  const posts = [...sell, ...notify, ...ask]  
 
   return (
     <div>
@@ -43,6 +41,8 @@ const sellTagTemplate = ({ data }) => {
             />
           ))}
         </CardList>
+
+
       </Container>
     </div>
   )
@@ -74,6 +74,25 @@ export const query = graphql`
         }
       }
       notify {
+        id
+        action
+        slug
+        pattern
+        creationDate(formatString: "MMMM DD, YYYY")
+        heroImage {
+          title
+          sizes(maxWidth: 1800) {
+            ...GatsbyContentfulSizes_withWebp_noBase64
+          }
+        }
+        triggers {
+          childMarkdownRemark {
+            html
+            excerpt(pruneLength: 30)
+          }       
+        }
+      }
+      ask {
         id
         action
         slug
