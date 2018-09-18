@@ -138,11 +138,11 @@ const Footer = () => (
       </Social>
       <Copyright>
         Built with{' '}
-        <a href="https://www.gatsbyjs.org" target="_blank">
+        <a href="https://www.linkedin.com/company/strategic-machines-inc/" target="_blank">
           <strong>Intelligent Content</strong>
         </a>{' '}
         by{' '}
-        <a href="https://fathurmh.github.io" target="_blank">
+        <a href="https://www.linkedin.com/company/strategic-machines-inc/" target="_blank">
           <strong>Strategic Machines</strong>
         </a>
         <br />
